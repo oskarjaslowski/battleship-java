@@ -3,7 +3,9 @@
 ## 📌 Author
 
 **Oskar Jasłowski**
+
 The code uses Polish class names (e.g. `Plansza`, `Przeciwnik`, `Statek`)
+
 as the project was developed as part of a university course.
 
 ---
