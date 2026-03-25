@@ -1,109 +1,112 @@
-# 🚢 Gra w Statki (Java Swing)
+# 🚢 Battleship Game (Java Swing)
 
-## 📌 Autor
+## 📌 Author
 
 **Oskar Jasłowski**
+The code uses Polish class names (e.g. `Plansza`, `Przeciwnik`, `Statek`)
+as the project was developed as part of a university course.
 
 ---
 
-## 🎯 Opis projektu
+## 🎯 Project Overview
 
-Celem projektu było stworzenie gry **Statki** w języku **Java** z wykorzystaniem biblioteki **Swing**.
-Gra umożliwia rozgrywkę przeciwko komputerowi oraz zapis i odczyt wyników graczy.
+This project is a **Battleship game** implemented in **Java** using the **Swing** library for the graphical user interface.
 
-Projekt zawiera:
+The game allows the player to compete against an AI opponent and includes a system for saving and loading player scores.
 
-* 23 klasy publiczne (w tym 2 abstrakcyjne)
-* 1 rekord (`Gracz`) do przechowywania wyników
+Project structure:
 
----
-
-## 🕹️ Funkcjonalności
-
-### 🎮 Tryb gry
-
-* Gra przeciwko komputerowi (AI)
-* 3 poziomy trudności:
-
-  * łatwy
-  * średni
-  * trudny
-
-### 💾 System wyników
-
-* zapis wyników do pliku JSON
-* możliwość odczytu tabeli wyników
-* zapis pseudonimu gracza i liczby punktów
-
-### 🧠 Sztuczna inteligencja
-
-* **Łatwy przeciwnik** – losowe strzały
-* **Średni przeciwnik** – podstawowa analiza trafień
-* **Trudny przeciwnik** – zaawansowana logika i przewidywanie
+* 23 public classes (including 2 abstract classes)
+* 1 record (`Gracz`) used for storing player nickname and score
 
 ---
 
-## 🖥️ Interfejs użytkownika
+## 🕹️ Features
 
-Po uruchomieniu gry dostępne jest menu:
+### 🎮 Gameplay
 
-* ▶️ Rozpocznij grę
-* 📊 Wyniki
-* 📖 Instrukcja
-* ❌ Wyjście
+* Player vs Computer
+* 3 difficulty levels:
 
-### ⚙️ Rozgrywka
+  * Easy
+  * Medium
+  * Hard
 
-1. Wybór poziomu trudności
-2. Rozstawianie statków:
+### 💾 Score System
 
-   * lewy przycisk myszy – przeciąganie statku
-   * prawy przycisk myszy – zmiana orientacji
-3. Kliknięcie **„Akceptuj”** rozpoczyna grę
-4. Celem jest zatopienie wszystkich statków przeciwnika
+* Save results to a JSON file
+* Load and display leaderboard
+* Store nickname and score
 
----
+### 🧠 AI Opponents
 
-## 🚢 Rodzaje statków
-
-### 🔴 Standardowe
-
-* różnią się długością
-* oznaczone kolorem czerwonym
-
-### ⭐ Specjalne
-
-* **Nawigator**
-  → po zatopieniu ujawnia lokalizację innego statku
-
-* **Pancernik**
-  → wymaga 2 trafień do zatopienia
-
-* **Bombowiec**
-  → wywołuje eksplozję obejmującą obszar planszy
-
-* **Niszczyciel**
-  → po trafieniu aktywuje podwójny atak
+* **Easy AI** – random shots
+* **Medium AI** – basic hit analysis
+* **Hard AI** – advanced logic and prediction
 
 ---
 
-## 🧱 Struktura projektu
+## 🖥️ User Interface
 
-### 🪟 Interfejs (Swing)
+After launching the game, a menu appears with options:
 
-* `Main` – główne okno (JFrame)
-* `Menu` – panel menu (JPanel)
-* `Plansza` (abstrakcyjna)
+* ▶️ Start Game
+* 📊 Scores
+* 📖 Instructions
+* ❌ Exit
+
+### ⚙️ Gameplay Flow
+
+1. Select difficulty level
+2. Place ships:
+
+   * Left mouse button – drag & drop
+   * Right mouse button – rotate ship
+3. Click **"Accept"** to start the game
+4. Destroy all enemy ships before they destroy yours
+
+---
+
+## 🚢 Ship Types
+
+### 🔴 Standard Ships
+
+* Differ only in length
+* Marked in red
+
+### ⭐ Special Ships
+
+* **Navigator**
+  → Reveals location of another ship after being destroyed
+
+* **Battleship (Armored)**
+  → Requires 2 hits to sink
+
+* **Bomber**
+  → Causes an explosion affecting multiple fields
+
+* **Destroyer**
+  → Triggers a double attack when hit
+
+---
+
+## 🧱 Project Structure
+
+### 🪟 GUI (Swing)
+
+* `Main` – main window (JFrame)
+* `Menu` – menu panel (JPanel)
+* `Plansza` (abstract)
 
   * `PlanszaGracza`
   * `PlanszaPrzeciwnika`
 
-### 🔘 Komponenty GUI
+### 🔘 Components
 
-* `Pole` – element graficzny pola (JButton)
-* `Przycisk` – obsługa przycisków
+* `Pole` – board field (JButton)
+* `Przycisk` – button logic
 
-### 💬 Okna dialogowe (JDialog)
+### 💬 Dialogs (JDialog)
 
 * `Instrukcja`
 * `Wyniki`
@@ -115,31 +118,26 @@ Po uruchomieniu gry dostępne jest menu:
 * `PrzeciwnikŁatwy`
 * `PrzeciwnikTrudny`
 
-### 🚢 Statki
+### 🚢 Ships
 
-* `Statek` (abstrakcyjna)
-* różne typy statków (np. Nawigator, Pancernik itd.)
+* `Statek` (abstract)
+* Various ship types (Navigator, Bomber, etc.)
 
-### 👤 Dane gracza
+### 👤 Player Data
 
 * `Gracz` (record)
 
-  * zapis do JSON
-  * odczyt wyników
+  * JSON save/load
 
 ---
 
-## ▶️ Uruchomienie
-
-1. Sklonuj repozytorium:
+## ▶️ How to Run
 
 ```bash
-git clone https://github.com/twoj-login/statki-java.git
+git clone https://github.com/your-username/battleship-java.git
 ```
 
-2. Otwórz projekt w IDE (np. IntelliJ / Eclipse)
-
-3. Uruchom klasę:
+Open the project in your IDE (e.g. IntelliJ / Eclipse) and run:
 
 ```bash
 Main.java
@@ -147,29 +145,24 @@ Main.java
 
 ---
 
-## 📦 Technologie
+## 📦 Technologies
 
 * Java
-* Swing (GUI)
-* JSON (zapisywanie danych)
+* Swing
+* JSON
 
 ---
 
-## 📄 Licencja
 
-Projekt udostępniony na licencji **MIT**.
+## 📄 License
 
----
-
-## 📸 Możliwe rozszerzenia
-
-* tryb multiplayer
-* lepsza grafika (JavaFX)
-* animacje
-* ranking online
+This project is licensed under the **MIT License**.
 
 ---
 
-## 💡 Uwagi
+## 💡 Future Improvements
 
-Projekt został wykonany w celach edukacyjnych w ramach zajęć akademickich.
+* Multiplayer mode
+* Better graphics (JavaFX)
+* Animations
+* Online leaderboard
